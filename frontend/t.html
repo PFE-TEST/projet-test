@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche - Front-End</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .search-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .search-input {
+            padding: 15px;
+            border: none;
+            border-radius: 25px 0 0 25px;
+            width: 70%;
+            font-size: 1.2em;
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+        .search-button {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            background: #ff6b6b;
+            color: #fff;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .search-button:hover {
+            background: #ff5252;
+        }
+        .results {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+        .result-item {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recherche</h1>
+        <form class="search-form" id="searchForm">
+            <input type="text" class="search-input" id="query" placeholder="Entrez votre recherche..." required>
+            <button type="submit" class="search-button">Rechercher</button>
+        </form>
+        <div class="results" id="results"></div>
+    </div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const query = document.getElementById('query').value.trim();
+            if (query) {
+                // Simulation d'une recherche (remplacez par votre appel back-end plus tard)
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '<p>Recherche en cours pour : "' + query + '"</p>';
+                
+                // Exemple de simulation de résultats (à remplacer par fetch vers votre API)
+                setTimeout(() => {
+                    resultsDiv.innerHTML = `
+                        <div class="result-item">Résultat 1 pour "${query}"</div>
+                        <div class="result-item">Résultat 2 pour "${query}"</div>
+                        <div class="result-item">Résultat 3 pour "${query}"</div>
+                    `;
+                }, 1000); // Délai simulé de 1 seconde
+            }
+        });
+    </script>
+</body>
+</html>

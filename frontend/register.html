@@ -1,0 +1,44 @@
+<!--#page register --> 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title data-key="register_doc_title">Inscription – IntelliBuild</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+
+<header class="topbar">
+  <h2> <div class="logo" data-key="brand">IntelliBuild</div></h2>
+  <div class="right">
+    <a href="p1.html" class="btn outline" data-key="nav_home">Accueil</a>
+  </div>
+</header>
+
+<section class="auth-container">
+  <div class="auth-box">
+    <h2 data-key="register_title">Créer un compte</h2>
+    <p data-key="register_sub">Rejoignez la plateforme IntelliBuild</p>
+   <form id="registerForm">
+     <label>Email</label>
+     <input id="registerEmail" type="email" placeholder="exemple@mail.com" required>
+
+      <label>Mot de passe</label>
+      <input id="registerPassword" type="password" placeholder="••••••••" required>
+
+      <label>Confirmer le mot de passe</label>
+       <input id="registerConfirm" type="password" placeholder="••••••••" required>
+
+      <button type="submit">S’inscrire</button>
+     </form>
+
+ <script src="register.js"></script>
+
+    
+    <span class="auth-link" data-html="true" data-key="auth_link_login"></span>
+  </div>
+</section>
+
+<script src="translations.js"></script>
+</body>
+</html>
